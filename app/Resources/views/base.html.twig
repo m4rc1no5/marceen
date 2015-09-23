@@ -2,12 +2,58 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Marcin Zaremba{% endblock %}</title>
+        {% block base_stylesheets %}
+            {% include ':assets:stylesheets.html.twig' %}
+            {% block stylesheets %}{% endblock %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/start">Marcin Zaremba | kruzar.pl</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <!-- menu górne -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kim jestem <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/kimjestem/ja_i_strona_ma">Ja i strona ma</a></li>
+                                <li><a href="/kimjestem/fotografia">Fotografia</a></li>
+                                <li><a href="/kimjestem/bieganie">Bieganie</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Android <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/android/calc4runner">Calc4Runner</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/dopobrania">Do pobrania</a>
+                        </li>
+                        <li>
+                            <a href="/flickrvlob">Zdjęcia</a>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+        <div class="container">
+            {% block container %}{% endblock %}
+        </div>
+
+        {% block base_javascripts %}
+            {% include ':assets:javascripts.html.twig' %}
+            {% block javascripts %}{% endblock %}
+        {% endblock %}
     </body>
 </html>
