@@ -55,13 +55,10 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="index.html">Kim jestem</a>
+                    <a href="{{ path('start') }}">Kim jestem</a>
                 </li>
                 <li>
-                    <a href="about.html">Android</a>
-                </li>
-                <li>
-                    <a href="post.html">Do pobrania</a>
+                    <a href="{{ path('android.calc4runner') }}">Android</a>
                 </li>
                 <li>
                     <a href="contact.html">Kontakt</a>
@@ -75,7 +72,7 @@
 
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url({{ asset('public/template/img/home-bg.jpg') }})">
+<header class="intro-header" style="background-image: url({% block background_image %}{{ asset('public/template/img/home-bg.jpg') }}{% endblock %})">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

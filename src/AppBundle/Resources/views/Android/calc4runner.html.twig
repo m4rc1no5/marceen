@@ -1,0 +1,136 @@
+{% extends '::base.html.twig' %}
+
+{% block background_image %}{{ asset('public/template/img/home-bg.jpg') }}{% endblock %}
+{% block site_heading_title %}Android{% endblock %}
+{% block site_heading_subtitle %}Calc4Runner{% endblock %}
+{% block container %}
+    <div style="text-align: left; margin: 0px;"><a href="http://market.android.com/details?id=pl.kruzar.calc4runner"
+                                                   target="_blank"> <img
+                    src="http://www.android.com/images/brand/45_avail_market_logo1.png"
+                    alt="Available in Android Market"/> </a></div>
+    <script type="text/javascript" src="../media/js/android_calc4runner.js"></script>
+    <div id="language"
+         style="text-align: right; font-weight: bold; margin: 10px; cursor: pointer; text-decoration: underline;">
+        <div id="eng">English version</div>
+        <div id="pol" style="display: none;">Polska wersja językowa</div>
+    </div>
+    <div id="polska_wersja">
+        <h3>Opis</h3>
+        <a href="http://market.android.com/details?id=pl.kruzar.calc4runner" target="_blank"><img class="screenshot"
+                                                                                                  style="float: right; margin: 7px 0 0 15px; border: 0px solid black;"
+                                                                                                  src="../../media/img/logo/calc4runner_150px.png"
+                                                                                                  alt=""/></a>
+
+        <div>Calc4Runner to kalkulator stworzony z myślą o osobach, kt&oacute;re kochają bieganie. Za pomocą tej
+            aplikacji obliczysz swoje BMI (wskaźnik masy ciała) oraz HRmax (maksymalne tętno).
+        </div>
+        <div>Calc4Runner oszacuje r&oacute;wnież (na podstawie wzoru, kt&oacute;rego autorem jest Peter Riegel)
+            prawdopodobny czas, jaki osiągnie Biegacz podczas zawod&oacute;w na r&oacute;żnych dystansach (m.in. na
+            10km, w p&oacute;łmaratonie czy maratonie).
+        </div>
+        <div>Aplikacja umożliwia r&oacute;wnież obliczenie prędkości biegu (wyrażonej w km/h lub mph) na podstawie tempa
+            (wyrażanego w min/km). W bieganiu szybkość określa się za pomocą tempa w min/km (ilość minut na jeden
+            kilometr) a nie za pomocą prędkości km/h (ilość kilometr&oacute;w na jedną godzinę) lub mph (ilość mil na
+            jedną godzinę). Szybkość w postaci tempa znajdziemy w wynikach zawod&oacute;w, pulsometrze czy aplikacjach
+            typu Endomondo. Jeśli chcemy obliczyć jakiej prędkości odpowiada dane tempo wystarczy skorzystać z tej
+            aplikacji.
+        </div>
+        <h3>Historia zmian</h3>
+
+        <div>Wersja 1.2.3</div>
+        <ul>
+            <li>Dopracowanie formularza przy obliczaniu stref treningowych</li>
+            <li>Ulepszenie p&oacute;l, w kt&oacute;rych wyświetlane są wyniki obliczeń</li>
+            <li>Poprawka w obliczeniach związanych z BMI (dzięki Wojtek)</li>
+            <li>Poprawka w obliczeniach HRmax metodą Sally Edwards (dzięki Michał)</li>
+            <li>Poprawka w obliczeniach stref treningowych metodą Harvonena (dzięki Michał)</li>
+        </ul>
+        <div>Wersja 1.2.2</div>
+        <ul>
+            <li>Nowy kalkulator - Strefy Treningowe</li>
+            <li>Wersja angielska jako domyślna</li>
+            <li>Poprawki w wersji angielskiej</li>
+            <li>Informacja o stronie www projektu</li>
+        </ul>
+        <div>Wersja 1.2.1</div>
+        <ul>
+            <li>Angielska wersja językowa</li>
+            <li>Blokada trybu landscape</li>
+            <li>Możliwość zdefiniowania wagi z dokładnością do jednego miejsca po przecinku</li>
+            <li>Poprawki w kalkulatorze RaceTimePredictor</li>
+            <li>Poprawki w kalkulatorze Pace2Speed</li>
+            <li>Poprawki w kalkulatorze BMI</li>
+        </ul>
+        <h3>Darowizna</h3>
+
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd"
+                                                                                  value="_s-xclick"/> <input
+                    type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+"/> Jeśli Calc4Runner spełnia Twoje oczekiwania i jest przyjemny "w dotyku" to bardzo mnie to cieszy - możesz mnie za to
+            nawet nagrodzić i zdopingować do dalszej pracy. :-)
+            <div style="text-align: center; margin-top: 10px;"><input style="border: 0px solid black;" type="image"
+                                                                      name="submit"
+                                                                      src="https://www.paypalobjects.com/pl_PL/PL/i/btn/btn_donateCC_LG.gif"
+                                                                      alt="PayPal &mdash; Płać wygodnie i bezpiecznie"/>
+                <img src="https://www.paypalobjects.com/pl_PL/i/scr/pixel.gif" alt="" width="1" height="1" border="0"/>
+            </div>
+        </form>
+    </div>
+    <div id="english_version" style="display: none;">
+        <h3>Description</h3>
+        <a href="http://market.android.com/details?id=pl.kruzar.calc4runner" target="_blank"><img class="screenshot"
+                                                                                                  style="float: right; margin: 7px 0 0 15px; border: 0px solid black;"
+                                                                                                  src="../../media/img/logo/calc4runner_150px.png"
+                                                                                                  alt=""/></a>
+
+        <div>Calc4Runner it's a converter designed for people who love running. Using this application you can calculate
+            your BMI (body mass index) and HRmax (maximum heart rate). Calc4Runner also estimate (based on the formula
+            written by Peter Riegel) the probably time that you reach during the competition at various distances
+            (including the 10km, half marathon or marathon).
+        </div>
+        <div>This calculator also converts pace to speed. In running we have pace in min/km (the number of minutes per
+            kilometer) not speed in km/h (kilometers per hour) or mph (number of miles per hour). We find pace in the
+            results of the competition, in heart rate monitor or applications like Endomondo. If we want to find out how
+            speed we have in training or in the competition simply just use this application.
+        </div>
+        <h3>History</h3>
+
+        <div>Version 1.2.3</div>
+        <ul>
+            <li>Improve form in Training Zones</li>
+            <li>Improve result fields</li>
+            <li>Fix BMI calculator (thanks Wojtek)</li>
+            <li>Fix Sally Edwards formula - HRmax calculator (thanks Michal)</li>
+            <li>Fix calulate Training Zones by Harvonen (thanks Michal)</li>
+        </ul>
+        <div>Version 1.2.2</div>
+        <ul>
+            <li>New calculator - Training Zones</li>
+            <li>English version as default</li>
+            <li>Hotfix in english version</li>
+            <li>Information about project website</li>
+        </ul>
+        <div>Version 1.2.1</div>
+        <ul>
+            <li>English version</li>
+            <li>Lock landscape mode</li>
+            <li>Ability to define weight with precision to one decimal place</li>
+            <li>Hotfix in the RaceTimePredictor calculator</li>
+            <li>Hotfix in the Pace2Speed calculator</li>
+            <li>Hotfix in the BMI calculator</li>
+        </ul>
+        <h3>Donate</h3>
+
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post"><input type="hidden" name="cmd"
+                                                                                  value="_s-xclick"/> <input
+                    type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+"/> If Calc4Runner is useful, please consider donating to the project via paypal. :)
+            <div style="text-align: center; margin-top: 10px;"><input style="border: 0px solid black;" type="image"
+                                                                      name="submit"
+                                                                      src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif"
+                                                                      alt="PayPal &mdash; The safer, easier way to pay online."/>
+                <img src="https://www.paypalobjects.com/pl_PL/i/scr/pixel.gif" alt="" width="1" height="1" border="0"/>
+            </div>
+        </form>
+    </div>
+{% endblock %}
