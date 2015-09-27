@@ -4,11 +4,13 @@
 {% block site_heading_title %}Android{% endblock %}
 {% block site_heading_subtitle %}Calc4Runner{% endblock %}
 {% block container %}
+    <p>W 2012 roku stworzyłem swój pierwszy program dostępny na platformie Android. To była taka mała wprawka żeby zobaczyć jak zorganizowane jest tworzenie i udostępnianie aplikacji w środowisku Google. Od tamtego czasu użytkownicy platformy Android zainstalowali Calc4Runner ponad 11000 razy.</p>
+    <p>To była dotychczas moja jedyna przygoda z developingiem w Androidzie. Mam jednak nadzieję, że nie ostatnia.</p>
+    <h1>Calc4Runner</h1>
     <div style="text-align: left; margin: 0px;"><a href="http://market.android.com/details?id=pl.kruzar.calc4runner"
                                                    target="_blank"> <img
                     src="http://www.android.com/images/brand/45_avail_market_logo1.png"
                     alt="Available in Android Market"/> </a></div>
-    <script type="text/javascript" src="../media/js/android_calc4runner.js"></script>
     <div id="language"
          style="text-align: right; font-weight: bold; margin: 10px; cursor: pointer; text-decoration: underline;">
         <div id="eng">English version</div>
@@ -133,4 +135,8 @@
             </div>
         </form>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="application/javascript" src="{{ asset('bundles/app/js/android_calc4runner.js') }}"></script>
 {% endblock %}

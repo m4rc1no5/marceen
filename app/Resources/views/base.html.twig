@@ -61,7 +61,7 @@
                     <a href="{{ path('android.calc4runner') }}">Android</a>
                 </li>
                 <li>
-                    <a href="contact.html">Kontakt</a>
+                    <a href="{{ path('kontakt') }}">Kontakt</a>
                 </li>
             </ul>
         </div>
@@ -106,7 +106,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                     <li>
-                        <a href="#">
+                        <a href="https://twitter.com/m4rc1no5" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -114,7 +114,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="https://www.facebook.com/kruzar" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -122,7 +122,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="https://github.com/m4rc1no5" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -136,14 +136,10 @@
     </div>
 </footer>
 
-<!-- jQuery -->
-<script src="{{ asset('public/template/js/jquery.js') }}"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="{{ asset('public/template/js/bootstrap.min.js') }}"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="{{ asset('public/template/js/clean-blog.min.js') }}"></script>
+{% block base_javascripts %}
+    {% include 'assets/javascripts.html.twig' %}
+    {% block javascripts %}{% endblock %}
+{% endblock %}
 
 </body>
 
