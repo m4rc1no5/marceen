@@ -25,22 +25,36 @@ class StartController extends Controller
      * W poprzedniej wersji strony był link, któtego teraz nie ma - przenosimy zatem
      * dla bezpieczeństwa na stronę startową
      *
-     * @Route("/kimjestem/ja_i_strona_ma")
+     * @Route("/kimjestem/ja_i_strona_ma", name="ja_i_strona_ma")
      */
     public function jaIStronaMaAction()
     {
-        return $this->redirect(
-            $this->generateUrl('start')
-        );
+        return $this->redirectToStart();
     }
 
     /**
      * W poprzedniej wersji strony był link, któtego teraz nie ma - przenosimy zatem
      * dla bezpieczeństwa na stronę startową
      *
-     * @Route("/kimjestem/bieganie")
+     * @Route("/kimjestem/bieganie", name="bieganie")
      */
     public function bieganieAction()
+    {
+        return $this->redirectToStart();
+    }
+
+    /**
+     * @Route("/flickrvlob/{id}", name="flickr")
+     */
+    public function flickrAction()
+    {
+        return $this->redirectToStart();
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    private function redirectToStart()
     {
         return $this->redirect(
             $this->generateUrl('start')
