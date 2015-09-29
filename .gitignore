@@ -7,7 +7,7 @@
 /app/phpunit.xml
 /bin/*
 !bin/aktualizuj
-#/composer.phar
+/composer.phar
 /vendor/
 /web/bundles/
 /web/.htaccess
