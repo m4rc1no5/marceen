@@ -57,3 +57,5 @@ If none of the previous methods work for you, change the umask so that the cache
 ```
 
 Note that using the ACL is recommended when you have access to them on your server because changing the umask is not thread-safe.
+
+http://symfony.com/doc/current/book/installation.html#configuration-and-setup
