@@ -1,5 +1,6 @@
 # marceen.pl
-Website
+
+[![Build Status](https://travis-ci.org/m4rc1no5/marceen.svg?branch=master)](https://travis-ci.org/m4rc1no5/marceen)
 
 Documentation
 =============
