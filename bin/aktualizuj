@@ -11,3 +11,4 @@ php composer.phar install -o
 app/console cache:clear --env=dev
 app/console cache:clear --env=prod
 app/console assets:install --symlink
+chmod -R 0777 app/cache/
