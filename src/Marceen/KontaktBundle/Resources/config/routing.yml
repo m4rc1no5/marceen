@@ -1,0 +1,4 @@
+marceen_kontakt:
+    resource:   "@MarceenKontaktBundle/Controller"
+    type:       annotation
+    prefix:     kontakt
