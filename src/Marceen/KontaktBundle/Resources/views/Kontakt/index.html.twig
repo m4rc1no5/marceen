@@ -13,8 +13,8 @@
         {{ form_start(form, { 'attr': { 'novalidate': 'novalidate' }}) }}
         <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
-                {{ form_label(form.name) }}
-                {{ form_widget(form.name, { 'label': 'Imię', 'attr': { 'class': 'form-control', 'placeholder': 'Imię' }}) }}
+                {{ form_label(form.name, 'Imię') }}
+                {{ form_widget(form.name, { 'attr': { 'class': 'form-control', 'placeholder': 'Imię' }}) }}
                 <div class="help-block text-danger">{{ form_errors(form.name) }}</div>
             </div>
         </div>
@@ -27,15 +27,15 @@
         </div>
         <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
-                {{ form_label(form.phone) }}
-                {{ form_widget(form.phone, { 'label': 'Telefon', 'attr': { 'class': 'form-control', 'placeholder': 'Telefon', 'data-validation-required-message': 'Podaj swój nr telefonu.', 'aria-invalid': 'false' }}) }}
+                {{ form_label(form.phone, 'Telefon') }}
+                {{ form_widget(form.phone, { 'attr': { 'class': 'form-control', 'placeholder': 'Telefon', 'data-validation-required-message': 'Podaj swój nr telefonu.', 'aria-invalid': 'false' }}) }}
                 <p class="help-block text-danger">{{ form_errors(form.phone) }}</p>
             </div>
         </div>
         <div class="row control-group">
             <div class="form-group col-xs-12 floating-label-form-group controls">
-                {{ form_label(form.message) }}
-                {{ form_widget(form.message, { 'label': 'Wiadomość', 'attr': { 'class': 'form-control', 'placeholder': 'Wiadomość', 'data-validation-required-message': 'Napisz wiadomość.', 'aria-invalid': 'false', 'rows': '6' }}) }}
+                {{ form_label(form.message, 'Wiadomość') }}
+                {{ form_widget(form.message, { 'attr': { 'class': 'form-control', 'placeholder': 'Wiadomość', 'data-validation-required-message': 'Napisz wiadomość.', 'aria-invalid': 'false', 'rows': '6' }}) }}
                 <p class="help-block text-danger">{{ form_errors(form.message) }}</p>
             </div>
         </div>
