@@ -1,4 +1,19 @@
 services:
+  marceen_kontakt.controller.kontakt:
+    class: Marceen\KontaktBundle\Controller\KontaktController
+    arguments: [@command_bus]
+    calls:
+      - [setContainer, [@service_container]]
+
   marceen_kontakt.form.type.kontakt:
     class: Marceen\KontaktBundle\Form\Type\KontaktType
     tags: [{ name: form.type, alias: kontakt }]
+
+  marceen_kontakt.repository.kontakt:
+    class: Marceen\KontaktBundle\Repository\Doctrine\KontaktRepository
+    arguments: [@doctrine.orm.entity_manager]
+
+  marceen_kontakt.handler.mail.dodaj:
+    class: Marceen\KontaktBundle\CommandBus\Mail\DodajMailHandler
+    arguments: [@marceen_kontakt.repository.kontakt]
+    tags: [{ name: command_handler, handles: 'mail.dodaj' }]

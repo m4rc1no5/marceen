@@ -27,4 +27,20 @@ abstract class Entity
      * @ORM\Column(type="datetime")
      */
     protected $dodata;
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDodata()
+    {
+        return $this->dodata;
+    }
 }

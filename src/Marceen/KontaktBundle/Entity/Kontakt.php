@@ -56,18 +56,22 @@ class Kontakt extends Entity
     protected $message;
 
     /**
-     * Set name
-     *
+     * Kontakt constructor.
      * @param string $name
-     *
-     * @return Kontakt
+     * @param string $email_from
+     * @param string $email_to
+     * @param string $phone
+     * @param string $message
      */
-    public function setName($name)
+    public function __construct($name, $email_from, $email_to, $phone, $message)
     {
         $this->name = $name;
-
-        return $this;
+        $this->email_from = $email_from;
+        $this->email_to = $email_to;
+        $this->phone = $phone;
+        $this->message = $message;
     }
+
 
     /**
      * Get name
@@ -77,20 +81,6 @@ class Kontakt extends Entity
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set emailFrom
-     *
-     * @param string $emailFrom
-     *
-     * @return Kontakt
-     */
-    public function setEmailFrom($emailFrom)
-    {
-        $this->email_from = $emailFrom;
-
-        return $this;
     }
 
     /**
@@ -104,20 +94,6 @@ class Kontakt extends Entity
     }
 
     /**
-     * Set emailTo
-     *
-     * @param string $emailTo
-     *
-     * @return Kontakt
-     */
-    public function setEmailTo($emailTo)
-    {
-        $this->email_to = $emailTo;
-
-        return $this;
-    }
-
-    /**
      * Get emailTo
      *
      * @return string
@@ -125,20 +101,6 @@ class Kontakt extends Entity
     public function getEmailTo()
     {
         return $this->email_to;
-    }
-
-    /**
-     * Set phone
-     *
-     * @param string $phone
-     *
-     * @return Kontakt
-     */
-    public function setPhone($phone)
-    {
-        $this->phone = $phone;
-
-        return $this;
     }
 
     /**
@@ -152,20 +114,6 @@ class Kontakt extends Entity
     }
 
     /**
-     * Set message
-     *
-     * @param string $message
-     *
-     * @return Kontakt
-     */
-    public function setMessage($message)
-    {
-        $this->message = $message;
-
-        return $this;
-    }
-
-    /**
      * Get message
      *
      * @return string
@@ -175,37 +123,4 @@ class Kontakt extends Entity
         return $this->message;
     }
 
-    /**
-     * Get id
-     *
-     * @return integer
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set dodata
-     *
-     * @param \DateTime $dodata
-     *
-     * @return Kontakt
-     */
-    public function setDodata($dodata)
-    {
-        $this->dodata = $dodata;
-
-        return $this;
-    }
-
-    /**
-     * Get dodata
-     *
-     * @return \DateTime
-     */
-    public function getDodata()
-    {
-        return $this->dodata;
-    }
 }

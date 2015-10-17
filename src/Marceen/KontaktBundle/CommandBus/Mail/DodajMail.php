@@ -22,6 +22,14 @@ class DodajMail extends MailCommand
         $this->email_to = $email_to;
     }
 
+    /**
+     * @return string
+     */
+    public function getEmailTo()
+    {
+        return $this->email_to;
+    }
+
     public static function messageName()
     {
         return 'mail.dodaj';
