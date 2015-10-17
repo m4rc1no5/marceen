@@ -8,9 +8,6 @@
 
 namespace Marceen\KontaktBundle\CommandBus\Mail;
 
-
-use AppBundle\CommandBus\Mail\MailCommand;
-
 class DodajMail extends MailCommand
 {
 

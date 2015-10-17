@@ -4,7 +4,46 @@
 {% block site_heading_title %}Kontakt{% endblock %}
 {% block site_heading_subtitle %}Masz pytanie? Napisz do mnie.{% endblock %}
 {% block container %}
-    <div style="text-align: center;">
-        <a href="mailto:marcin.zaremba@gmail.com">marcin.zaremba@gmail.com</a>
+
+    <p>
+        Jeśli masz do mnie jakiekolwiek pytanie lub inną sprawę to śmiało korzystaj z poniższego formularza. Z góry dziękuję za każde dobre słowo i obiecuję, że w ciągu 24 godzin odpiszę. :-)
+    </p>
+
+    <div>
+        {{ form_start(form, { 'attr': { 'novalidate': 'novalidate' }}) }}
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+                {{ form_label(form.name) }}
+                {{ form_widget(form.name, { 'label': 'Imię', 'attr': { 'class': 'form-control', 'placeholder': 'Imię' }}) }}
+                <div class="help-block text-danger">{{ form_errors(form.name) }}</div>
+            </div>
+        </div>
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+                {{ form_label(form.email_from) }}
+                {{ form_widget(form.email_from, { 'attr': { 'class': 'form-control', 'placeholder': 'Email', 'data-validation-required-message': 'Podaj swój adres email.', 'aria-invalid': 'false' }}) }}
+                <p class="help-block text-danger">{{ form_errors(form.email_from) }}</p>
+            </div>
+        </div>
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+                {{ form_label(form.phone) }}
+                {{ form_widget(form.phone, { 'label': 'Telefon', 'attr': { 'class': 'form-control', 'placeholder': 'Telefon', 'data-validation-required-message': 'Podaj swój nr telefonu.', 'aria-invalid': 'false' }}) }}
+                <p class="help-block text-danger">{{ form_errors(form.phone) }}</p>
+            </div>
+        </div>
+        <div class="row control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+                {{ form_label(form.message) }}
+                {{ form_widget(form.message, { 'label': 'Wiadomość', 'attr': { 'class': 'form-control', 'placeholder': 'Wiadomość', 'data-validation-required-message': 'Napisz wiadomość.', 'aria-invalid': 'false', 'rows': '6' }}) }}
+                <p class="help-block text-danger">{{ form_errors(form.message) }}</p>
+            </div>
+        </div>
+        <div class="row control-group">
+            <div class="form-group col-xs-12" style="margin-top: 40px;">
+                <button class="btn btn-default" type="submit">Wyślij</button>
+            </div>
+        </div>
+        {{ form_end(form) }}
     </div>
 {% endblock %}
