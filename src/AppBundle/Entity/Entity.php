@@ -37,6 +37,14 @@ abstract class Entity
     }
 
     /**
+     * @param \DateTime $dodata
+     */
+    public function setDodata(\DateTime $dodata)
+    {
+        $this->dodata = $dodata;
+    }
+
+    /**
      * @return string
      */
     public function getDodata()

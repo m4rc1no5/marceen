@@ -44,7 +44,7 @@ class Kontakt extends Entity
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=32)
+     * @ORM\Column(type="string", length=32, nullable=true)
      */
     protected $phone;
 
@@ -70,6 +70,8 @@ class Kontakt extends Entity
         $this->email_to = $email_to;
         $this->phone = $phone;
         $this->message = $message;
+
+        $this->dodata = new \DateTime();
     }
 
 

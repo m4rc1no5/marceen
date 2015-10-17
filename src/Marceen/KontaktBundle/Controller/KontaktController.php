@@ -51,6 +51,7 @@ class KontaktController extends Controller
 
         if($form->isValid()){
             $this->command_bus->handle($mail_command);
+            $this->get('doctrine.orm.entity_manager')->flush();
         }
 
         return [

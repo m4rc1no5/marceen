@@ -16,4 +16,4 @@ services:
   marceen_kontakt.handler.mail.dodaj:
     class: Marceen\KontaktBundle\CommandBus\Mail\DodajMailHandler
     arguments: [@marceen_kontakt.repository.kontakt]
-    tags: [{ name: command_handler, handles: 'mail.dodaj' }]
+    tags: [{ name: command_handler, handles: Marceen\KontaktBundle\CommandBus\Mail\DodajMail }]
