@@ -25,17 +25,10 @@ abstract class MailCommand extends Command
      * @var string
      *
      * @Assert\Email()
+     * @Assert\NotBlank()
      * @Assert\Length(max="128")
      */
     protected $email_from;
-
-    /**
-     * @var string
-     *
-     * @Assert\Email()
-     * @Assert\Length(max="128")
-     */
-    protected $email_to;
 
     /**
      * @var string
@@ -47,6 +40,7 @@ abstract class MailCommand extends Command
     /**
      * @var string
      *
+     * @Assert\NotBlank()
      * @Assert\Length(max="2048")
      */
     protected $message;
