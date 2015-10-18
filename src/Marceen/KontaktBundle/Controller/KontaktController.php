@@ -56,7 +56,7 @@ class KontaktController extends Controller implements HasUnitOfWork
             $this->command_bus->handle($mail_command);
             $this->unitOfWork->commit();
 
-            $this->redirectToRoute('kontakt.mail_send');
+            $this->redirect($this->generateUrl('kontakt.mail_send'));
         }
 
         return [
