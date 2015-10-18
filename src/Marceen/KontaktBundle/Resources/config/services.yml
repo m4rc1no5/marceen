@@ -4,6 +4,7 @@ services:
     arguments: [@command_bus]
     calls:
       - [setContainer, [@service_container]]
+      - [setUnitOfWork, [@unit_of_work]]
 
   marceen_kontakt.form.type.kontakt:
     class: Marceen\KontaktBundle\Form\Type\KontaktType

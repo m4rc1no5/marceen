@@ -2,6 +2,8 @@
 
 namespace Marceen\KontaktBundle\Controller;
 
+use Component\HasUnitOfWork;
+use Component\HasUnitOfWorkTrait;
 use Marceen\KontaktBundle\CommandBus\Mail\DodajMail;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -15,8 +17,9 @@ use Symfony\Component\HttpFoundation\Request;
  *
  * @Route("/", service="marceen_kontakt.controller.kontakt")
  */
-class KontaktController extends Controller
+class KontaktController extends Controller implements HasUnitOfWork
 {
+    use HasUnitOfWorkTrait;
 
     /** @var MessageBus */
     private $command_bus;
@@ -51,7 +54,8 @@ class KontaktController extends Controller
 
         if($form->isValid()){
             $this->command_bus->handle($mail_command);
-            $this->get('doctrine.orm.entity_manager')->flush();
+            //$this->get('doctrine.orm.entity_manager')->flush();
+            $this->unitOfWork->commit();
         }
 
         return [
