@@ -22,7 +22,7 @@ abstract class Entity
     protected $id;
 
     /**
-     * @var string
+     * @var \DateTime
      *
      * @ORM\Column(type="datetime")
      */
@@ -45,7 +45,7 @@ abstract class Entity
     }
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getDodata()
     {
