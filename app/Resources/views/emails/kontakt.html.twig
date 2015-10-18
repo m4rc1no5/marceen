@@ -6,4 +6,5 @@
 <div>Imię: <span style="font-weight: bold;">{{ name }}</span></div>
 <div>Telefon: <span style="font-weight: bold;">{{ phone }}</span></div>
 <div>Wiadomość:</div>
-<div style="font-style: italic; margin-top: 5px;">{{ message }}</div>
+<div style="margin: 5px;">{{ message }}</div>
+<div>Data i czas dodania wiadomości do systemu: {{ dodata.format('Y-m-d H:i:s') }}</div>

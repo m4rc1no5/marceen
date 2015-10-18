@@ -40,6 +40,7 @@ class WysylkaMailaListener
             'name' => $kontakt->getName(),
             'phone' => $kontakt->getPhone(),
             'message' => $kontakt->getMessage(),
+            'dodata' => $kontakt->getDodata(),
         ]);
     }
 
