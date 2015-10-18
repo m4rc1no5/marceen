@@ -11,8 +11,9 @@
         długodystansowy, maratończyk,
         grafik w razie potrzeby, fotograf z zamiłowania, motocyklista oraz rowerzysta. :-)
     </p>
+    <h1>Strona</h1>
     <p>
-        Stronka jest moją małą wizytówką i nie spełnia żadnego wielkiego, odpowiedzialnego zadania.
+        Ninejsza strona jest moją małą wizytówką i nie spełnia żadnego wielkiego, odpowiedzialnego zadania.
         Jest takim małym królikiem doświadczalnym, na którym od czasu do czasu testuję nowe rozwiązania i pomysły.
         Obecnie witryna oparta jest na frameworkach Symfony2 oraz Bootstrap.
         Wcześniejsza wersja strony była stworzona przy użyciu frameworka Kohana ale od jakiegoś czasu to Symfony2
@@ -20,6 +21,19 @@
         o najlepszy framework PHP - przynajmniej wg mojej opinii.
         W tym projekcie skorzystałem również z gotowego layoutu o nazwie Clean Blog i można go znaleźć na portalu
         <a href="https://github.com/IronSummitMedia/startbootstrap-clean-blog" target="_blank">GitHub</a>.
+    </p>
+    <p>
+        Kod źródłowy strony również znajduje się w serwisie <a href="https://github.com/m4rc1no5/marceen"
+                                                               target="_blank">GitHub</a>.
+        Według mnie najciekawszą i najbardziej złożoną częścią tego projektu jest dział kontakt i odpowiadający mu
+        <a href="https://github.com/m4rc1no5/marceen/tree/master/src/Marceen/KontaktBundle" target="_blank">KontaktBundle</a>.
+        W tym miejscu skorzystałem z biblioteki <a href="https://github.com/SimpleBus/MessageBus" target="_blank">SimpleBus/MessageBus</a>
+        (<a href="https://github.com/SimpleBus/SymfonyBridge" target="_blank">SimpleBus/SymfonyBridge</a>) utworzonej
+        przez <a href="http://php-and-symfony.matthiasnoback.nl/" target="_blank">Matthiasa Nobacka</a>. Tutaj
+        skorzystałem również z eventów - rozdzieliłem zapis maila w bazie i wysyłkę na dwa etapy. Za pomocą zdarzenia
+        <a href="http://symfony.com/doc/current/components/http_kernel/introduction.html#the-kernel-terminate-event"
+           target="_blank">kernel.terminate</a> wysyłka maili odbywa sie w tle, po wyrenderowaniu strony (jeśli serwer,
+        na którym znajduje się strona korzysta z PHP FPM).
     </p>
     <h1>Programowanie</h1>
     <p>
