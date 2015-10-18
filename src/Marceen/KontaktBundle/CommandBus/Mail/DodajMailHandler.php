@@ -10,25 +10,39 @@ namespace Marceen\KontaktBundle\CommandBus\Mail;
 
 
 use Marceen\KontaktBundle\Entity\Kontakt;
+use Marceen\KontaktBundle\Event\DodanoMailEvent;
+use Marceen\KontaktBundle\MarceenKontatEvents;
 use Marceen\KontaktBundle\Repository\Doctrine\KontaktRepository;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class DodajMailHandler
 {
     /** @var KontaktRepository */
-    private $kontakt_repository;
+    private $kontaktRepository;
+
+    /** @var EventDispatcherInterface */
+    private $eventDispatcher;
 
     /**
      * DodajMailHandler constructor.
-     * @param KontaktRepository $kontakt_repository
+     * @param KontaktRepository $kontaktRepository
+     * @param EventDispatcherInterface $eventDispatcher
      */
-    public function __construct(KontaktRepository $kontakt_repository)
+    public function __construct(KontaktRepository $kontaktRepository, EventDispatcherInterface $eventDispatcher)
     {
-        $this->kontakt_repository = $kontakt_repository;
+        $this->kontaktRepository = $kontaktRepository;
+        $this->eventDispatcher = $eventDispatcher;
     }
 
     public function handle(DodajMail $dodajMail)
     {
         $kontakt = new Kontakt($dodajMail->getName(), $dodajMail->getEmailFrom(), $dodajMail->getEmailTo(), $dodajMail->getPhone(), $dodajMail->getMessage());
-        $this->kontakt_repository->add($kontakt);
+        $this->kontaktRepository->add($kontakt);
+
+        //rejestrujemy event w dispatcherze
+        $this->eventDispatcher->dispatch(
+            MarceenKontatEvents::MAIL_ADD,
+            new DodanoMailEvent($kontakt)
+        );
     }
 }

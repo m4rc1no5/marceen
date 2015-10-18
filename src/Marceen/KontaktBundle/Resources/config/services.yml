@@ -16,5 +16,12 @@ services:
 
   marceen_kontakt.handler.mail.dodaj:
     class: Marceen\KontaktBundle\CommandBus\Mail\DodajMailHandler
-    arguments: [@marceen_kontakt.repository.kontakt]
+    arguments: [@marceen_kontakt.repository.kontakt, @event_dispatcher]
     tags: [{ name: command_handler, handles: Marceen\KontaktBundle\CommandBus\Mail\DodajMail }]
+
+  marceen_kontakt.listener.mail.wysylka:
+    class: Marceen\KontaktBundle\EventListener\WysylkaMailaListener
+    arguments: [@component.mail]
+    tags:
+      - { name: kernel.event_listener, event: marceen.mail.add, method: onDodanoMail }
+      - { name: kernel.event_listener, event: kernel.terminate, method: onKernelTerminate }

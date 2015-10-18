@@ -54,7 +54,6 @@ class KontaktController extends Controller implements HasUnitOfWork
 
         if($form->isValid()){
             $this->command_bus->handle($mail_command);
-            //$this->get('doctrine.orm.entity_manager')->flush();
             $this->unitOfWork->commit();
         }
 
