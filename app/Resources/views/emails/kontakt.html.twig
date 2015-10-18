@@ -1,9 +1,9 @@
 <p>
-    Użytkownik {{ name }} zostawił wiadomość na Twojej stronie internetowej <a href="{{ url('start') }}">marceen.pl</a>
+    Użytkownik <span style="font-weight: bold;">{{ name }}</span> zostawił wiadomość na Twojej stronie internetowej <a href="{{ url('start') }}">marceen.pl</a>
 </p>
 
-<div>Dane z formularza:</div>
-<div>Imię: {{ name }}</div>
-<div>Telefon: {{ phone }}</div>
+<p>Dane formularza:</p>
+<div>Imię: <span style="font-weight: bold;">{{ name }}</span></div>
+<div>Telefon: <span style="font-weight: bold;">{{ phone }}</span></div>
 <div>Wiadomość:</div>
-<div>{{ message }}</div>
+<p style="font-style: italic;">{{ message }}</p>
