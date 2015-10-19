@@ -8,7 +8,55 @@ Documentation
 Table of contents
 -----------------
 
-1. [Setting up permissions](#permission)
+1. [Installation](#installation)
+2. [Update project](#update)
+3. [Setting up permissions](#permission)
+
+<a name="installation"></a>
+Installation
+------------
+
+### Create database
+
+To create database in PostgreSQL first You must login to database:
+
+```
+psql -U postgres template1
+```
+
+and then create database, user and set permissions:
+
+```sql
+CREATE DATABASE example_database_name;
+CREATE USER example_username WITH example_password;
+GRANT ALL ON DATABASE example_database_name TO example_username;
+```
+
+### Modyfy config
+
+To connect with database and send email You must modify file parameters.yml
+
+### Setting up permissions
+
+Folders app/cache and app/logs directories must be writable - see [Setting up permissions](#permission)
+
+<a name="update"></a>
+Update project
+--------------
+
+### One command to update project
+
+If You want update this project You must launch from console: 
+
+```
+bin/aktualizacja
+```
+
+This command update project, download and update Your composer.phar and clear the cache. 
+
+### Setting up permissions
+
+Folders app/cache and app/logs directories must be writable - see [Setting up permissions](#permission)
 
 <a name="permission"></a>
 Setting up permissions
