@@ -36,6 +36,12 @@ GRANT ALL ON DATABASE example_database_name TO example_username;
 
 To connect with database and send email You must modify file parameters.yml
 
+### Create database schema
+
+```
+app/console doctrine:schema:update --force
+```
+
 ### Setting up permissions
 
 Folders app/cache and app/logs directories must be writable - see [Setting up permissions](#permission)
