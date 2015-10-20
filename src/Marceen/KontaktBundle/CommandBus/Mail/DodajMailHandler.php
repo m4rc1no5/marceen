@@ -36,7 +36,7 @@ class DodajMailHandler
 
     public function handle(DodajMail $dodajMail)
     {
-        $kontakt = new Kontakt($dodajMail->getName(), $dodajMail->getEmailFrom(), $dodajMail->getEmailTo(), $dodajMail->getPhone(), $dodajMail->getMessage());
+        $kontakt = new Kontakt($dodajMail->getTitle(), $dodajMail->getName(), $dodajMail->getEmailFrom(), $dodajMail->getEmailTo(), $dodajMail->getPhone(), $dodajMail->getMessage(), $dodajMail->getIp());
         $this->kontaktRepository->add($kontakt);
 
         //rejestrujemy event w dispatcherze

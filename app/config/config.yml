@@ -7,6 +7,8 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: pl
+    kontakt_mail_title: "%marceen_kontakt_mail_title%"
+    kontakt_mail_to:    "%marceen_kontakt_mail_to%"
 
 framework:
     #esi:             ~
@@ -36,6 +38,7 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
     globals:
+        site_name:      "%site_name%"
         ga_tracking:    "%ga_tracking%"
 
 # Assetic Configuration

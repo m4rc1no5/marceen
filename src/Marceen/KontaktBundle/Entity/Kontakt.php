@@ -23,6 +23,13 @@ class Kontakt extends Entity
     /**
      * @var string
      *
+     * @ORM\Column(type="string", length=256)
+     */
+    protected $title;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(type="string", length=128)
      */
     protected $name;
@@ -56,24 +63,42 @@ class Kontakt extends Entity
     protected $message;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=128)
+     */
+    protected $ip;
+
+    /**
      * Kontakt constructor.
+     * @param string $title
      * @param string $name
      * @param string $email_from
      * @param string $email_to
      * @param string $phone
      * @param string $message
+     * @param string $ip
      */
-    public function __construct($name, $email_from, $email_to, $phone, $message)
+    public function __construct($title, $name, $email_from, $email_to, $phone, $message, $ip)
     {
+        $this->title = $title;
         $this->name = $name;
         $this->email_from = $email_from;
         $this->email_to = $email_to;
         $this->phone = $phone;
         $this->message = $message;
+        $this->ip = $ip;
 
         $this->dodata = new \DateTime();
     }
 
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
     /**
      * Get name
@@ -123,6 +148,14 @@ class Kontakt extends Entity
     public function getMessage()
     {
         return $this->message;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIp()
+    {
+        return $this->ip;
     }
 
 }

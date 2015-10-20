@@ -19,5 +19,12 @@ parameters:
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
 
+    # My own parameters
+    site_name:  marceen.pl
+
+    # email title (contact form)
+    marceen_kontakt_mail_title: 'Sample Title'
+    marceen_kontakt_mail_to:    marcin.zaremba@gmail.com
+
     #Google Analytics
     ga_tracking:       UA-xxxxx-x

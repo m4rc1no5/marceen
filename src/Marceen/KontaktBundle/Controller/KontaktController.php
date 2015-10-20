@@ -45,8 +45,10 @@ class KontaktController extends Controller implements HasUnitOfWork
      */
     public function indexAction(Request $request)
     {
-        $email_to = 'marcin.zaremba@gmail.com';
-        $mail_command = new DodajMail($email_to);
+        $title = $this->container->getParameter('marceen_kontakt_mail_title');
+        $email_to = $this->container->getParameter('marceen_kontakt_mail_to');
+        $ip = $request->getClientIp();
+        $mail_command = new DodajMail($title, $email_to, $ip);
 
         $form = $this->createForm('kontakt', $mail_command);
 
@@ -57,7 +59,6 @@ class KontaktController extends Controller implements HasUnitOfWork
             $this->unitOfWork->commit();
 
             return $this->redirectToRoute('kontakt.mail_send');
-            //return $this->redirect($this->generateUrl('kontakt.mail_send'));
         }
 
         return [
