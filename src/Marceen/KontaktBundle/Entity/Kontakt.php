@@ -23,7 +23,7 @@ class Kontakt extends Entity
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=256)
+     * @ORM\Column(type="string", length=256, nullable=true)
      */
     protected $title;
 
@@ -65,7 +65,7 @@ class Kontakt extends Entity
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=128)
+     * @ORM\Column(type="string", length=128, nullable=true)
      */
     protected $ip;
 
