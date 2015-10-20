@@ -44,9 +44,33 @@ class StartController extends Controller
     }
 
     /**
-     * @Route("/flickrvlob/{id}", name="flickr")
+     * @Route("/flickrvlob", name="flickr")
      */
     public function flickrAction()
+    {
+        return $this->redirectToStart();
+    }
+
+    /**
+     * @Route("/flickrvlob/{id}", name="flickr_photo")
+     */
+    public function flickrPhotoAction()
+    {
+        return $this->redirectToStart();
+    }
+
+    /**
+     * @Route("/dopobrania", name="dopobrania")
+     */
+    public function doPobraniaAction()
+    {
+        return $this->redirectToStart();
+    }
+
+    /**
+     * @Route("/dopobrania/kolkoikrzyzyk", name="kik")
+     */
+    public function kikAction()
     {
         return $this->redirectToStart();
     }
