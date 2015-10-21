@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new Marceen\KontaktBundle\MarceenKontaktBundle(),
             new \SimpleBus\SymfonyBridge\SimpleBusCommandBusBundle(),
+            new Debril\RssAtomBundle\DebrilRssAtomBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

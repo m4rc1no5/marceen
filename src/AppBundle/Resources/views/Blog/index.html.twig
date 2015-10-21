@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+
+{% block background_image %}{{ asset('public/template/img/kontakt-bg-01.jpg') }}{% endblock %}
+{% block site_heading_title %}Blog{% endblock %}
+{% block site_heading_subtitle %}<a href="http://{{ blog_url }}/" target="_blank">{{ blog_url }}</a>{% endblock %}
+{% block container %}
+    {% for item in items|slice(0, 5) %}
+        <div class="post-preview">
+            <a href="{{ item.link }}" target="_blank">
+                <h2 class="post-title">{{ item.title }}</h2>
+            </a>
+            <p class="post-meta">Data publikacji: {{ item.updated.format('Y-m-d H:i:s') }}</p>
+            <div>
+                {{ item.description|replace({'h2>': 'h4>'})|raw }}
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+    <ul class="pager">
+        <li class="next">
+            <a href="http://{{ blog_url }}/" target="_blank">Starsze posty →</a>
+        </li>
+    </ul>
+{% endblock %}

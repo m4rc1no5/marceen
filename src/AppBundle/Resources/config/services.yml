@@ -2,3 +2,6 @@ services:
   unit_of_work:
     class: Component\UnitOfWork
     arguments: [@doctrine.orm.entity_manager]
+  app.controller.blog:
+    class: AppBundle\Controller\BlogController
+    arguments: [@debril.reader]

@@ -2,6 +2,9 @@ marceen_kontakt:
     resource: "@MarceenKontaktBundle/Resources/config/routing.yml"
     prefix:   /
 
+feedio:
+    resource: @DebrilRssAtomBundle/Resources/config/routing.xml
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
