@@ -2,7 +2,7 @@
 
 {% block background_image %}{{ asset('public/template/img/kontakt-bg-01.jpg') }}{% endblock %}
 {% block site_heading_title %}Blog{% endblock %}
-{% block site_heading_subtitle %}<a href="http://{{ blog_url }}/" target="_blank">{{ blog_url }}</a>{% endblock %}
+{% block site_heading_subtitle %}<a href="http://{{ blog_url }}/" target="_blank" style="color: white;">{{ blog_url }}</a>{% endblock %}
 {% block container %}
     {% for item in items|slice(0, 5) %}
         <div class="post-preview">
