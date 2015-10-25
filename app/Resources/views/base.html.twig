@@ -15,7 +15,12 @@
     <meta name="author" content="{{ author }}">
 
     {# The Open Graph protocol #}
-
+    <meta property="og:site_name" content="{{ author }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Strona prywatna">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:url" content="{{ path('start') }}">
+    <meta property="og:image" content="{{ asset('public/template/img/start-bg.jpg') }}">
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('public/template/css/bootstrap.min.css') }}" rel="stylesheet">
