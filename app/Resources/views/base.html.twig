@@ -1,3 +1,4 @@
+{% set url = 'http://marceen.pl' %}
 {% set author = 'Marcin Zaremba' %}
 {% set description = 'Marcin Zaremba, absolwent Politechniki Gdańskiej, entuzjasta technologii open source, projektant aplikacji internetowych i programista PHP / Symfony2.' %}
 
@@ -19,8 +20,8 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Strona prywatna">
     <meta property="og:description" content="{{ description }}">
-    <meta property="og:url" content="{{ path('start') }}">
-    <meta property="og:image" content="{{ asset('public/template/img/start-bg.jpg') }}">
+    <meta property="og:url" content="{{ url }}{{ path('start') }}">
+    <meta property="og:image" content="{{ url }}{{ asset('public/template/img/start-bg.jpg') }}">
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('public/template/css/bootstrap.min.css') }}" rel="stylesheet">
