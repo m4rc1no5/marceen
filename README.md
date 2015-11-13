@@ -39,7 +39,7 @@ To connect with database and send email You must modify file parameters.yml
 ### Create database schema
 
 ```
-app/console doctrine:schema:update --force
+app/console doctrine:schema:create
 ```
 
 ### Setting up permissions
