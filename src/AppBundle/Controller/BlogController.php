@@ -8,10 +8,8 @@
 
 namespace AppBundle\Controller;
 
-
 use Debril\RssAtomBundle\Protocol\FeedReader;
 use Debril\RssAtomBundle\Protocol\Parser\FeedContent;
-use Debril\RssAtomBundle\Protocol\Parser\Item;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -48,25 +46,16 @@ class BlogController extends Controller
     {
         $date = new \DateTime('2015-01-01');
 
-        $url = "http://m4rc1no5.blogspot.com/feeds/posts/default";
+        $url = "https://m4rc1no5.blogspot.com/feeds/posts/default";
 
         /** @var FeedContent $feed */
         $feed = $this->reader->getFeedContent($url, $date);
 
-        //print_r($feed);
-
-
-        // pobieramy dane
         $items = $feed->getItems();
-
-        /** @var Item $item */
-        //$item = $items[0];
-        //$item->
 
         return [
             'blog_url' => 'm4rc1no5.blogspot.com',
             'items' => $items
         ];
     }
-
 }
