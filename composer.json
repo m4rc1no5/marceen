@@ -1,5 +1,7 @@
 {
-    "name": "marcinos/marceen",
+    "name": "marceen",
+    "version": "1.0.0",
+    "description": "Marcin Zaremba - Personal Website",
     "license": "proprietary",
     "type": "project",
     "autoload": {
