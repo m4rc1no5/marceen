@@ -16,6 +16,11 @@ Table of contents
 Installation
 ------------
 
+### Composer
+
+1. Download latest Composer from https://getcomposer.org/download/
+2. Run script bin/aktualizuj
+
 ### Create database
 
 To create database in PostgreSQL first You must login to database:
