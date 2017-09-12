@@ -16,7 +16,7 @@ Table of contents
 Installation
 ------------
 
-### Composer
+### Install dependencies
 
 1. Download latest Composer from https://getcomposer.org/download/
 2. Run script bin/aktualizuj
