@@ -36,7 +36,7 @@ class WysylkaMailaListener
         $kontakt = $this->dodanoMailEvent->getKontakt();
 
         //prepare mail
-        $this->mail->prepare($kontakt->getTitle(), $kontakt->getEmailFrom(), $kontakt->getEmailTo(), 'kontakt', [
+        $this->mail->prepare($kontakt->getTitle(), "kontakt@marceen.pl", $kontakt->getEmailTo(), 'kontakt', [
             'name' => $kontakt->getName(),
             'phone' => $kontakt->getPhone(),
             'message' => $kontakt->getMessage(),
