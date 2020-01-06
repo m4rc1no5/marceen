@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-git pull
+git pull orygin master
 
 if [ ! -e "composer.phar" ]; then
 	echo 'Brak composera. Instaluję...';
