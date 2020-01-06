@@ -15,6 +15,9 @@ class DodajMail extends MailCommand
     protected $title;
 
     /** @var string */
+    protected $email_account;
+
+    /** @var string */
     protected $email_to;
 
     /** @var string */
@@ -22,12 +25,14 @@ class DodajMail extends MailCommand
 
     /**
      * @param string $title
+     * @param string $email_account
      * @param string $email_to
      * @param string $ip
      */
-    public function __construct($title, $email_to, $ip)
+    public function __construct($title, $email_account, $email_to, $ip)
     {
         $this->title = $title;
+        $this->email_account = $email_account;
         $this->email_to = $email_to;
         $this->ip = $ip;
     }
@@ -38,6 +43,14 @@ class DodajMail extends MailCommand
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmailAccount()
+    {
+        return $this->email_account;
     }
 
     /**

@@ -46,9 +46,10 @@ class KontaktController extends Controller implements HasUnitOfWork
     public function indexAction(Request $request)
     {
         $title = $this->container->getParameter('marceen_kontakt_mail_title');
+        $email_account = $this->container->getParameter('mailer_user');
         $email_to = $this->container->getParameter('marceen_kontakt_mail_to');
         $ip = $request->getClientIp();
-        $mail_command = new DodajMail($title, $email_to, $ip);
+        $mail_command = new DodajMail($title, $email_account, $email_to, $ip);
 
         $form = $this->createForm('kontakt', $mail_command);
 

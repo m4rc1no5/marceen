@@ -42,7 +42,7 @@ class DodajMailHandler
         //rejestrujemy event w dispatcherze
         $this->eventDispatcher->dispatch(
             MarceenKontatEvents::MAIL_ADD,
-            new DodanoMailEvent($kontakt)
+            new DodanoMailEvent($kontakt, $dodajMail->getEmailAccount())
         );
     }
 }
