@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  marceen:
+    build:
+      context: ./marceen
+    image: marceen/marceen
+    container_name: marceen
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+
+networks:
+  default:
+    external:
+      name: marceen
