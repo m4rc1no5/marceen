@@ -2,22 +2,22 @@
 <html lang="pl" prefix="og: http://ogp.me/ns#">
 
 <head>
-    <title>Marcin Zaremba</title>
+    <title id="username">{{ username }}</title>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-          content="Marcin Zaremba, absolwent Politechniki Gdańskiej, entuzjasta technologii open source, projektant aplikacji i programista.">
-    <meta name="author" content="Marcin Zaremba">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Marcin Zaremba, absolwent Politechniki Gdańskiej, entuzjasta technologii open source, projektant aplikacji i programista."
+          name="description">
+    <meta content="Marcin Zaremba" name="author">
 
-    <meta property="og:site_name" content="Marcin Zaremba">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Strona prywatna">
-    <meta property="og:description"
-          content="Marcin Zaremba, absolwent Politechniki Gdańskiej, entuzjasta technologii open source, projektant aplikacji i programista.">
-    <meta property="og:url" content="http://marceen.pl/">
-    <meta property="og:image" content="http://marceen.pl/public/template/img/start-bg.jpg">
+    <meta content="Marcin Zaremba" property="og:site_name">
+    <meta content="website" property="og:type">
+    <meta content="Strona prywatna" property="og:title">
+    <meta content="Marcin Zaremba, absolwent Politechniki Gdańskiej, entuzjasta technologii open source, projektant aplikacji i programista."
+          property="og:description">
+    <meta content="http://marceen.pl/" property="og:url">
+    <meta content="http://marceen.pl/public/template/img/start-bg.jpg" property="og:image">
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -42,6 +42,9 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <!-- Google Analytisc -->
     <script>
@@ -70,8 +73,8 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
+            <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse"
+                    type="button">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -113,7 +116,7 @@
 </header>
 
 <!-- Main Content -->
-<div id="main_content" class="container">
+<div class="container" id="main_content">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <p>
@@ -208,6 +211,16 @@
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="js/clean-blog.js"></script>
+
+<script>
+    var app = new Vue({
+        el: '#username',
+        data: {
+            username: "Marcin Zaremba"
+        }
+    })
+</script>
+
 </body>
 
 </html>
